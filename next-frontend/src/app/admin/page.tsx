@@ -3,6 +3,7 @@
 import { useEffect, useRef } from "react";
 import { useMap } from "../../hooks/useMap";
 import { socket } from "../../utils/socket-io";
+import Navbar from "../_components/navbar";
 
 function AdminPage() {
   const mapContainerRef = useRef<HTMLDivElement>(null);
@@ -45,7 +46,12 @@ function AdminPage() {
     };
   }, [map]);
 
-  return <div className="h-full w-full" ref={mapContainerRef} />;
+  return (
+    <div className="h-screen flex flex-col">
+      <Navbar />
+      <div className="h-full w-full" ref={mapContainerRef} />
+    </div>
+  );
 }
 
 export default AdminPage;
