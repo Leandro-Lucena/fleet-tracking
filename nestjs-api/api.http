@@ -1,0 +1,31 @@
+GET http://localhost:3000/places?text=florianopolis, 485, campo grande, ms
+
+###
+GET http://localhost:3000/places?text=bodoquena ms
+
+###
+@originId = ChIJtTPKugLnhpQRn4kSc9aBEKI
+@destinationId = ChIJ7cKWQGIdfJQR7j1MIF6G0pU
+
+###
+GET http://localhost:3000/directions?originId={{ originId }}&destinationId={{ destinationId }}
+
+###
+
+POST http://localhost:3000/routes
+Content-Type: application/json
+
+{
+    "name": "rota 1",
+    "source_id": "{{ originId }}",
+    "destination_id": "{{ destinationId }}"
+}
+###
+@routeId = 676567f25d4c6ca8d1af0c61
+###
+POST http://localhost:3000/routes/{{routeId}}/start
+
+###
+GET http://localhost:3000/routes
+###
+GET http://localhost:3000/routes/67579e4f1ea32497ee230bbd
