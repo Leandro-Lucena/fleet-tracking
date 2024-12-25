@@ -13,9 +13,11 @@ const Navbar = () => {
     return (
       <Link
         href={path}
-        className={`font:bold ${
-          pathname === path ? "text-main" : "text-muted-foreground"
-        } text-xl md:text-base`}
+        className={`font-semibold ${
+          pathname === path
+            ? "text-main text-xl"
+            : "text-muted-foreground text-lg"
+        }`}
       >
         {name}
       </Link>
@@ -23,7 +25,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="flex gap-8 p-3 px-4 bg-default text-contrast">
+    <nav className="flex gap-8 p-3 px-4 bg-default text-contrast shadow-xl justify-center">
       {Object.keys(tabs).map((tab) => (
         <span key={tab}>{generateLink(tab, tabs[tab])}</span>
       ))}

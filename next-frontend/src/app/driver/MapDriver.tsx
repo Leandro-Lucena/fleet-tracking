@@ -60,5 +60,5 @@ export function MapDriver(props: MapDriverProps) {
     };
   }, [routeIdElementId, map]);
 
-  return <div className="w-2/3 h-full" ref={mapContainerRef} />;
+  return <div className="w-full md:w-2/3 h-full" ref={mapContainerRef} />;
 }

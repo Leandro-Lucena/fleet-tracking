@@ -11,9 +11,8 @@ async function DriverPage() {
   return (
     <div className="h-screen flex flex-col">
       <Navbar />
-      <div className="flex flex-1 w-full h-full">
-        <div className="w-1/3 p-2 h-full">
-          <h4 className="text-3xl text-contrast mb-2">Inicie uma rota</h4>
+      <div className="flex flex-1 w-full h-full flex-col md:flex-row">
+        <div className="w-full md:w-1/3 p-2 md:h-full mt-4">
           <div className="flex flex-col">
             <StartRouteForm>
               <select
@@ -34,7 +33,7 @@ async function DriverPage() {
                 className="bg-main text-primary p-2 rounded text-xl font-bold"
                 style={{ width: "100%" }}
               >
-                Iniciar a viagem
+                Iniciar
               </button>
             </StartRouteForm>
           </div>

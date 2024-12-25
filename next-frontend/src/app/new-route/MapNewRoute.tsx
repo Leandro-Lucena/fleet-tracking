@@ -33,5 +33,5 @@ export function MapNewRoute(props: MapNewRouteProps) {
     });
   }, [map, directionsData]);
 
-  return <div className="w-2/3 h-full" ref={mapContainerRef} />;
+  return <div className="w-full md:w-2/3 h-full" ref={mapContainerRef} />;
 }

@@ -25,9 +25,9 @@ async function NewRoutePage({
   return (
     <div className="h-screen flex flex-col">
       <Navbar />
-      <div className="flex flex-1 w-full h-full">
-        <div className="w-1/3 p-4 h-full">
-          <h4 className="text-3xl text-contrast mb-2">Nova rota</h4>
+      <div className="flex flex-1 w-full h-full flex-col md:flex-row">
+        <div className="w-full h-50 overflow-auto md:w-1/3 p-2 md:h-full mt-4 shadow-lg">
+          {/* <h4 className="text-3xl text-contrast mb-4">Criar rota</h4> */}
           <form className="flex flex-col space-y-4" method="get">
             <div className="relative">
               <input
@@ -65,7 +65,7 @@ async function NewRoutePage({
               type="submit"
               className="bg-main text-primary p-2 rounded text-xl font-bold"
             >
-              Pesquisar
+              Buscar
             </button>
           </form>
           {directionsData && (
@@ -105,9 +105,9 @@ async function NewRoutePage({
                 )}
                 <button
                   type="submit"
-                  className="bg-main text-primary font-bold p-2 rounded mt-4"
+                  className="bg-main text-primary font-bold p-2 text-xl rounded mt-4 w-full"
                 >
-                  Adicionar rota
+                  Criar
                 </button>
               </NewRouteForm>
             </div>
