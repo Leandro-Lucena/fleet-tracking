@@ -1,0 +1,4 @@
+include:
+  - ./golang-simulator/docker-compose.dev.yaml
+  - ./nestjs-api/docker-compose.dev.yaml
+  - ./next-frontend/docker-compose.dev.yaml

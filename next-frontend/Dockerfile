@@ -1,38 +1,35 @@
-# Etapa 1: Construção
+# Etapa 1: Build
 FROM node:22.8.0-slim AS builder
 
-# Definir diretório de trabalho dentro do container
+# Criar e definir o diretório de trabalho
 WORKDIR /home/node/app
 
-# Copiar arquivos necessários para instalar as dependências
-COPY package.json package-lock.json ./ 
+# Copiar arquivos de configuração e pacotes para instalação
+COPY package.json package-lock.json ./
 
-# Instalar dependências de produção e desenvolvimento
-RUN npm install --legacy-peer-deps
+# Instalar as dependências
+RUN npm install --frozen-lockfile
 
-# Copiar o restante do código
+# Copiar o restante do código fonte
 COPY . .
 
-# Construir a aplicação para produção
+# Construir a aplicação Next.js
 RUN npm run build
 
-# Etapa 2: Imagem para produção
+# Etapa 2: Produção
 FROM node:22.8.0-slim
 
-# Definir diretório de trabalho
+# Criar e definir o diretório de trabalho
 WORKDIR /home/node/app
 
-# Copiar apenas os arquivos necessários para rodar em produção
-COPY --from=builder /home/node/app/package.json /home/node/app/package-lock.json ./
-COPY --from=builder /home/node/app/.next ./.next
-COPY --from=builder /home/node/app/public ./public
-COPY --from=builder /home/node/app/node_modules ./node_modules
+# Definir o usuário
+USER node
 
-# Definir variável de ambiente para produção
-ENV NODE_ENV=production
+# Copiar a aplicação construída da etapa anterior
+COPY --from=builder /home/node/app /home/node/app
 
-# Expor a porta padrão do Next.js
+# Expor a porta padrão que o Next.js utiliza
 EXPOSE 3000
 
-# Comando para iniciar a aplicação
-CMD ["npm", "run", "start"]
+# Rodar o Next.js em modo de produção
+CMD ["npm", "start"]

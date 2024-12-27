@@ -1,0 +1,13 @@
+services:
+  next:
+    container_name: next
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    volumes:
+      - .:/home/node/app
+    ports:
+      - 3001:3000
+    # depends_on:
+    #   kafka-topic-generator:
+    #     condition: service_completed_successfully

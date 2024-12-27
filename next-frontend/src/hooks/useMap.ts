@@ -28,7 +28,7 @@ export function useMap(containerRef: React.RefObject<HTMLDivElement | null>) {
       });
       setMap(map);
     })();
-  }, [containerRef]);
+  }, [containerRef, locale]);
 
   return map;
 }

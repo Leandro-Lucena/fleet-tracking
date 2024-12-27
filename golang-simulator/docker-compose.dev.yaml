@@ -1,18 +1,20 @@
 include:
   - ../mongodb/docker-compose.yaml
-  - ../kafka/docker-compose.yaml
+  - ../kafka/docker-compose.dev.yaml
 
 services:
   simulator:
     container_name: simulator
     build:
       context: .
-      dockerfile: Dockerfile
+      dockerfile: Dockerfile.dev
     depends_on:
       mongo:
         condition: service_started
       kafka-topic-generator:
         condition: service_completed_successfully
+    volumes:
+      - .:/app
     environment:
       - MONGO_URI=mongodb://root:root@mongo:27017/routes?authSource=admin&directConnection=true
       - KAFKA_BROKER=kafka:9092
