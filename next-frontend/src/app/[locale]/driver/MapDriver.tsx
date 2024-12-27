@@ -1,8 +1,8 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import { useMap } from "../../hooks/useMap";
-import { socket } from "../../utils/socket-io";
+import { useMap } from "../../../hooks/useMap";
+import { socket } from "../../../utils/socket-io";
 
 export type MapDriverProps = {
   routeIdElementId: string;

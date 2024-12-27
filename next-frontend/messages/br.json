@@ -1,0 +1,27 @@
+{
+  "HomePage": {
+    "welcome": "Bem vindo!",
+    "description": "Este projeto demonstra um sistema moderno e robusto para gerenciar e rastrear frotas de veículos. Desenvolvido com tecnologias de ponta, oferece uma experiência eficiente e escalável para criar rotas geográficas e monitorar, em tempo real, os veículos de uma frota privada se movendo pelo mapa.",
+    "technologies": "Tecnologias utilizadas:",
+    "btn_go_to_panel": "Ir para o painel"
+  },
+  "Navbar": {
+    "panel": "Painel",
+    "create_route": "Criar rota",
+    "start_route": "Iniciar rota"
+  },
+  "DriverPage": {
+    "select_a_route": "Selecione uma rota",
+    "btn_start": "Iniciar",
+    "route_started": "Rota iniciada com sucesso!"
+  },
+  "CreateRoutePage": {
+    "origin": "Origem",
+    "destination": "Destino",
+    "distance": "Distância",
+    "duration": "Duração",
+    "btn_search": "Buscar",
+    "btn_create": "Criar",
+    "route_created": "Rota criada com sucesso!"
+  }
+}

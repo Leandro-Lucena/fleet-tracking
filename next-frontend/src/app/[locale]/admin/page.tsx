@@ -1,8 +1,8 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import { useMap } from "../../hooks/useMap";
-import { socket } from "../../utils/socket-io";
+import { useMap } from "../../../hooks/useMap";
+import { socket } from "../../../utils/socket-io";
 import Navbar from "../_components/navbar";
 
 function AdminPage() {
@@ -49,7 +49,7 @@ function AdminPage() {
   return (
     <div className="h-screen flex flex-col">
       <Navbar />
-      <div className="h-full w-full" ref={mapContainerRef} />
+      <div className="h-full w-full z-1" ref={mapContainerRef} />
     </div>
   );
 }

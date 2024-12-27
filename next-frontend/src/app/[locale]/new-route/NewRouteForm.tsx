@@ -2,8 +2,10 @@
 
 import { PropsWithChildren, useActionState } from "react";
 import { createRouteAction } from "./create-route.action";
+import { useTranslations } from "next-intl";
 
 export function NewRouteForm(props: PropsWithChildren) {
+  const t = useTranslations("CreateRoutePage");
   const [state, formAction] = useActionState<
     {
       error?: string;
@@ -20,7 +22,7 @@ export function NewRouteForm(props: PropsWithChildren) {
       )}
       {state?.success && (
         <div className="p-4 border rounded text-contrast bg-success">
-          Rota criada com sucesso!
+          {t("route_created")}
         </div>
       )}
       {props.children}

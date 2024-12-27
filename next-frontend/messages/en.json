@@ -1,0 +1,27 @@
+{
+  "HomePage": {
+    "welcome": "Welcome!",
+    "description": "This project demonstrates a modern and robust system for managing and tracking vehicle fleets. Developed with cutting-edge technologies, it offers an efficient and scalable experience for creating geographic routes and monitoring, in real time, the vehicles of a private fleet moving across the map.",
+    "technologies": "Technologies used:",
+    "btn_go_to_panel": "Go to the panel"
+  },
+  "Navbar": {
+    "panel": "Panel",
+    "create_route": "Create route",
+    "start_route": "Start route"
+  },
+  "DriverPage": {
+    "select_a_route": "Select a route",
+    "btn_start": "Start",
+    "route_started": "Route started successfully!"
+  },
+  "CreateRoutePage": {
+    "origin": "Origin",
+    "destination": "Destination",
+    "distance": "Distance",
+    "duration": "Duration",
+    "btn_search": "Search",
+    "btn_create": "Create",
+    "route_created": "Route created successfully!"
+  }
+}

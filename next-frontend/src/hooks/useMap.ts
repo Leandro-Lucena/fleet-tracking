@@ -2,8 +2,10 @@ import { Loader } from "@googlemaps/js-api-loader";
 import { useEffect, useState } from "react";
 import { Map } from "../utils/map";
 import { getCurrentPosition } from "./geolocation";
+import { useLocale } from "next-intl";
 
 export function useMap(containerRef: React.RefObject<HTMLDivElement | null>) {
+  const locale = useLocale();
   const [map, setMap] = useState<Map>();
 
   useEffect(() => {
@@ -11,6 +13,7 @@ export function useMap(containerRef: React.RefObject<HTMLDivElement | null>) {
       const loader = new Loader({
         apiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY as string,
         libraries: ["routes", "geometry", "marker"],
+        language: locale == "br" ? "pt-BR" : locale,
       });
       const [, , , position] = await Promise.all([
         loader.importLibrary("routes"),

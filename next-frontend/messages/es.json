@@ -1,0 +1,27 @@
+{
+  "HomePage": {
+    "welcome": "¡Bienvenido!",
+    "description": "Este proyecto demuestra un sistema moderno y robusto para la gestión y seguimiento de flotas de vehículos. Desarrollado con tecnologías de vanguardia, ofrece una experiencia eficiente y escalable para crear rutas geográficas y monitorear, en tiempo real, los vehículos de una flota privada moviéndose a través del mapa.",
+    "technologies": "Tecnologías utilizadas:",
+    "btn_go_to_panel": "Ir al panel"
+  },
+  "Navbar": {
+    "panel": "Panel",
+    "create_route": "Crear ruta",
+    "start_route": "Iniciar ruta"
+  },
+  "DriverPage": {
+    "select_a_route": "Seleccionar una ruta",
+    "btn_start": "Iniciar",
+    "route_started": "¡Ruta iniciada con éxito!"
+  },
+  "CreateRoutePage": {
+    "origin": "Origen",
+    "destination": "Destino",
+    "distance": "Distancia",
+    "duration": "Duración",
+    "btn_search": "Buscar",
+    "btn_create": "Crear",
+    "route_created": "¡Ruta creada con éxito!"
+  }
+}

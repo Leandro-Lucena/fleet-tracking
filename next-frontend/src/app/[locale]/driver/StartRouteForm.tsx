@@ -2,8 +2,10 @@
 
 import { PropsWithChildren, useActionState } from "react";
 import { startRouteAction } from "./start-route.action";
+import { useTranslations } from "next-intl";
 
 export function StartRouteForm(props: PropsWithChildren) {
+  const t = useTranslations("DriverPage");
   const [state, formAction] = useActionState<
     {
       error?: string;
@@ -20,7 +22,7 @@ export function StartRouteForm(props: PropsWithChildren) {
       )}
       {state?.success && (
         <div className="p-4 border rounded text-contrast bg-success">
-          Rota iniciada com sucesso!
+          {t("route_started")}
         </div>
       )}
       {props.children}

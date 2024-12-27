@@ -1,15 +1,17 @@
 export const dynamic = "force-dynamic";
-import { RouteModel } from "../../utils/models";
+import { RouteModel } from "../../../utils/models";
 import { MapDriver } from "./MapDriver";
 import { StartRouteForm } from "./StartRouteForm";
-import { getRoutes } from "../../utils/routes";
+import { getRoutes } from "../../../utils/routes";
 import Navbar from "../_components/navbar";
+import { getTranslations } from "next-intl/server";
 
 async function DriverPage() {
+  const t = await getTranslations("DriverPage");
   const routes = await getRoutes();
 
   return (
-    <div className="h-screen flex flex-col">
+    <div className="h-screen overflow-hidden flex flex-col">
       <Navbar />
       <div className="flex flex-1 w-full h-full flex-col md:flex-row">
         <div className="w-full md:w-1/3 p-2 md:h-full mt-4">
@@ -21,7 +23,7 @@ async function DriverPage() {
                 className="mb-2 p-2 border rounded bg-default text-contrast"
               >
                 <option key="0" value="">
-                  Selecione uma rota
+                  {t("select_a_route")}
                 </option>
                 {routes.map((route: RouteModel) => (
                   <option key={route.id} value={route.id}>
@@ -30,10 +32,10 @@ async function DriverPage() {
                 ))}
               </select>
               <button
-                className="bg-main text-primary p-2 rounded text-xl font-bold"
+                className="bg-main text-contrast p-2 rounded text-xl font-bold"
                 style={{ width: "100%" }}
               >
-                Iniciar
+                {t("btn_start")}
               </button>
             </StartRouteForm>
           </div>

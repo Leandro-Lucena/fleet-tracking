@@ -10,7 +10,7 @@ export default {
     extend: {
       colors: {
         default: "#242526",
-        main: "#ffcd00",
+        main: "#487aa1",
         error: "#f35759",
         success: "#366912",
       },
