@@ -22,11 +22,14 @@ FROM node:22.8.0-slim
 # Criar e definir o diretório de trabalho
 WORKDIR /home/node/app
 
-# Definir o usuário
-USER node
-
 # Copiar a aplicação construída da etapa anterior
 COPY --from=builder /home/node/app /home/node/app
+
+# Ajustar permissões para o usuário `node`
+RUN chown -R node:node /home/node/app
+
+# Definir o usuário
+USER node
 
 # Expor a porta padrão que o Next.js utiliza
 EXPOSE 3000
