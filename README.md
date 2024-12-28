@@ -25,7 +25,7 @@ Fleet Tracking is a modern and robust system designed to manage and track vehicl
 ### Requirements
 
 - Docker installed on your machine.
-- A Maps Platform API Key (can be obtained for free from the Google Cloud Console).
+- A Google Cloud API Key (can be obtained for free from the Google Cloud Console) with the following APIs enabled: Directions API, Maps JavaScript API, and Places API. .
 
 ### Setup Instructions
 
@@ -35,7 +35,7 @@ Fleet Tracking is a modern and robust system designed to manage and track vehicl
    git clone https://github.com/Leandro-Lucena/fleet-tracking
    ```
 
-2. Rename the `.env.example` file to `.env` and insert your Maps Platform API Key. Update the `.env` files in both the `/nestjs-api` and `/next-frontend` directories.
+2. Rename the `.env.example` files to `.env`,and replace `<YOUR_GOOGLE_API_KEY>` with your Google Cloud API Key. Update the `.env` files in both the `/nestjs-api` and `/next-frontend` directories.
 
 3. Navigate to the project root directory and start the containers using Docker Compose:
 
@@ -43,7 +43,7 @@ Fleet Tracking is a modern and robust system designed to manage and track vehicl
    docker compose up
    ```
 
-4. Once all containers are up, access the system via:
+4. Sit back, relax, and grab a coffee ☕ while Docker sets everything up! Once all containers are up, access the Fleet Tracking on your browser via:
    ```
    http://localhost:3001
    ```
