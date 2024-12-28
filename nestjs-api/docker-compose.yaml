@@ -6,10 +6,10 @@ services:
   nest:
     container_name: nest
     build: .
-    volumes:
-      - .:/home/node/app
     ports:
       - 3000:3000
+    env_file:
+      - .env
     depends_on:
       kafka-topic-generator:
         condition: service_completed_successfully
